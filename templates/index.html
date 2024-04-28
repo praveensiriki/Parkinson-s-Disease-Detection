@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Parkinson's Disease Prediction</h1>
+    <form id="parkinson-form" action="/predict" method="post">
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="gender">Gender (Male/Female):</label><br>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+
+        <label for="tremor">Tremor Type:</label><br>
+        <select id="tremor" name="tremor" required>
+            <option value="">Select Tremor Type</option>
+            <option value="Postural">Postural</option>
+            <option value="No tremor">No tremor</option>
+            <option value="Rest tremor">Rest tremor</option>
+        </select><br>
+
+        <label for="muscular-symptoms">Muscular Symptoms:</label><br>
+        <div id="muscular-symptoms">
+            <input type="checkbox" id="difficulty-standing" name="muscular-symptoms" value="Difficulty standing">
+            <label for="difficulty-standing">Difficulty standing</label><br>
+            <input type="checkbox" id="difficulty-walking" name="muscular-symptoms" value="Difficulty walking">
+            <label for="difficulty-walking">Difficulty walking</label><br>
+            <input type="checkbox" id="Stiff-muscles" name="muscular-symptoms" value="Stiff muscles">
+            <label for="Stiff-muscles">Stiff muscles</label><br>
+            <input type="checkbox" id="difficulty-with-bodily-movements" name="muscular-symptoms" value="Difficulty with bodily movements">
+            <label for="difficulty-with-bodily-movements">Difficulty with bodily movements</label><br>
+            <input type="checkbox" id="involuntary-movements" name="muscular-symptoms" value="Involuntary movements">
+            <label for="involuntary-movements">Involuntary movements</label><br>
+            <input type="checkbox" id="muscle-rigidity" name="muscular-symptoms" value="Muscle rigidity">
+            <label for="muscle-rigidity">Muscle rigidity</label><br>
+            <input type="checkbox" id="slow-bodily-movement" name="muscular-symptoms" value="Slow bodily movement">
+            <label for="slow-bodily-movement">Slow bodily movement</label><br>
+        </div><br>
+
+        <label for="sleep-disturbances">Sleep Disturbances:</label><br>
+        <div id="sleep-disturbances">
+            <input type="checkbox" id="early-awakening" name="sleep-disturbances" value="early-awakening">
+            <label for="early-awakening">early-awakening</label><br>
+            <input type="checkbox" id="nightmares" name="sleep-disturbances" value="Nightmares">
+            <label for="nightmares">Nightmares</label><br>
+            <input type="checkbox" id="restless-sleep" name="sleep-disturbances" value="Restless sleep">
+            <label for="restless-sleep">Restless sleep</label><br>
+            <input type="checkbox" id="disturbances" name="sleep-disturbances" value="Disturbances">
+            <label for="disturbances">Disturbances</label><br>
+        </div><br>
+
+        <label for="fatigue">Fatigue (Yes/No):</label><br>
+        <select id="fatigue" name="fatigue" required>
+            <option value="">Select Fatigue</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label for="cognitive-symptoms">Cognitive Symptoms:</label><br>
+        <select id="cognitive-symptoms" name="cognitive-symptoms" required>
+            <option value="">Select Cognitive Symptoms</option>
+            <option value="Difficulty thinking and understanding">Difficulty thinking and understanding</option>
+            <option value="Amnesia">Amnesia</option>
+            <option value="Confusion in the evening hours">Confusion in the evening hours</option>
+        </select><br>
+
+        <label for="speech-difficulties">Speech Difficulties:</label><br>
+        <select id="speech-difficulties" name="speech-difficulties" required>
+            <option value="">Select Difficulties</option>
+            <option value="Voice box spasms">Voice box spasms</option>
+            <option value="Difficulty speaking">Difficulty speaking</option>
+            <option value="No">Normal</option>
+        </select><br>
+
+        <label for="mood-changes">Mood Changes:</label><br>
+        <select id="mood-changes" name="mood-changes" required>
+            <option value="">Select Mood</option>
+            <option value="Anxiety">Anxiety</option>
+            <option value="Apathy">Apathy</option>
+            <option value="No">Normal</option>
+        </select><br>
+
+        <label for="sense-of-smell">Sense of Smell:</label><br>
+        <select id="sense-of-smell" name="sense-of-smell" required>
+            <option value="">Select Sense of Smell</option>
+            <option value="Loss of smell">Loss of smell</option>
+            <option value="Distorted sense">Distorted sense</option>
+            <option value="No sense">No sense</option>
+        </select><br>
+
+        <label for="urinary-symptoms">Urinary Symptoms:</label><br>
+        <select id="urinary-symptoms" name="urinary-symptoms" required>
+            <option value="">Select Urinary Symptoms</option>
+            <option value="Dribbling of urine">Dribbling of urine</option>
+            <option value="Leaking of urine">Leaking of urine</option>
+            <option value="Fear of falling">Fear of falling</option>
+            <option value="No urinary symptoms">No urinary symptoms</option>
+        </select><br>
+
+        <label for="facial-symptoms">Facial Symptoms:</label><br>
+        <select id="facial-symptoms" name="facial-symptoms" required>
+            <option value="">Select Facial Symptoms</option>
+            <option value="Reduced facial expression">Reduced facial expression</option>
+            <option value="Jaw stiffness">Jaw stiffness</option>
+            <option value="No facial expression">No facial expression</option>
+        </select><br>
+
+        <label for="other-symptoms">Other Common Symptoms:</label><br>
+        <div id="other-symptoms">
+            <input type="checkbox" id="Trembling" name="other-symptoms" value="Trembling">
+            <label for="Trembling">Trembling</label><br>
+            <input type="checkbox" id="Unintentional writhing" name="other-symptoms" value="Unintentional writhing">
+            <label for="Unintentional writhing">Unintentional writhing</label><br>
+            <input type="checkbox" id="Difficulty swallowing" name="other-symptoms" value="Difficulty swallowing">
+            <label for="Difficulty swallowing">Difficulty swallowing</label><br>
+            <input type="checkbox" id="Depression" name="other-symptoms" value="Depression">
+            <label for="Depression">Depression</label><br>
+            <input type="checkbox" id="Falling" name="other-symptoms" value="Falling">
+            <label for="Falling">Falling</label><br>
+            <input type="checkbox" id="Small hand writing" name="other-symptoms" value="Small hand writing">
+            <label for="Small hand writing">Small hand writing</label><br>
+            <input type="checkbox" id="Weightloss" name="other-symptoms" value="Weightloss">
+            <label for="Weightloss">Weightloss</label><br>
+            <input type="checkbox" id="Constipation" name="other-symptoms" value="Constipation">
+            <label for="Constipation">Constipation</label><br>
+        </div><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

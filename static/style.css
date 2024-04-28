@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('PPD.jpg');
+    background-size: cover; /* Change background size to cover */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e1d1d;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* New font family */
+    font-size: 36px; /* Increase font size for emphasis */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+form {
+    max-width: 700px;
+    margin: 20px auto; /* Adjust margin for better centering */
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #181818; /* Darken label color for better contrast */
+}
+
+form select,
+form input[type="number"],
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Increase margin for better spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+form div {
+    margin-bottom: 15px; /* Increase margin for better spacing */
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+form label[for] { /* New CSS for label next to checkboxes */
+    display: inline-block;
+    font-weight: normal; /* Remove bold font weight */
+    vertical-align: middle;
+}
+
+form input[type="checkbox"] + label { /* Style for checkbox options */
+    color: #999; /* Lighter font color for options */
+}
+
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Increase font size for better visibility */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #4CAF50; /* Match button color for consistency */
+}

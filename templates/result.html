@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-photo/professional-chemists-analysing-vaccine-development-using-touchscreen-display-equipped-laboratory-overwork_482257-548.jpg?t=st=1714326033~exp=1714329633~hmac=3e26bc1bc2f372fc11bdfaca12741833542d9280f9f729ae88fcf9b40aff89e0&w=1380');
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #3014aa;
+        }
+        .prediction-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+        .prediction {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="prediction-container">
+        <h1>Parkinson's Disease Prediction Result</h1>
+        <div class="prediction">
+            {% if prediction == 'Yes' %}
+                The model predicts that the patient has Parkinson's Disease.
+            {% else %}
+                The model predicts that the patient does not have Parkinson's Disease.
+            {% endif %}
+        </div>
+        <button class="back-button" onclick="window.history.back()">Go Back</button>
+    </div>
+</body>
+</html>
